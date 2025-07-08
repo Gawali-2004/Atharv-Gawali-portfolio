@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ---- Fix for anchor scroll under fixed navbar ---- */
+html {
+  scroll-padding-top: 70px;  
+  scroll-behavior: smooth; /* match your navbar height */
+}
+
+/* Optional: only on small screens */
+@media (max-width: 768px) {
+  html {
+    margin-bottom: 1rem;
+    scroll-padding-top: 90px; /* tweak if your mobile navbar is taller */
+  }
+}
+#skills {
+  padding-top: 80px;
+  margin-top: -80px;
+}
