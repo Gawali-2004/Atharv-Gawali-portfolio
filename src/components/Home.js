@@ -2,6 +2,7 @@ import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+
 const Home = () => (
   <motion.div
     id="home"
@@ -16,7 +17,7 @@ const Home = () => (
     alignItems: "center",
     padding: "60px 20px",
     color: "white",
-    background: "linear-gradient(135deg, #141e30, #243b55)", // Only gradient
+    background: "linear-gradient(135deg, #141e30, #243b55)",
    
     }}
   >

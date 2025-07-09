@@ -6,19 +6,18 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Hide scrollbar while allowing scrolling */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   background: transparent;
   color: #fff;
 }
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 /* ===== NAVBAR STYLES ===== */
@@ -97,7 +96,6 @@ body::-webkit-scrollbar {
   color: #66d9ef;
   text-decoration: none !important;
 }
-
 .nav-link.active {
   color: #66d9ef;
   font-weight: 600;
@@ -106,11 +104,12 @@ body::-webkit-scrollbar {
 
 /* ===== HOME SECTION ===== */
 #home {
-  padding-top: 0px;
+  padding-top: 80px;
   min-height: 100vh;
   width: 100%;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
 }
+
 
 /* ===== TYPOGRAPHY & SECTIONS ===== */
 .section-heading {
@@ -156,10 +155,9 @@ body::-webkit-scrollbar {
 }
 
 /* ===== CONTACT SECTION ===== */
-
 .contact-section {
   background-color: #022c3c;
-  padding: 60px 20px 30px; /* reduce bottom padding */
+  padding: 60px 20px 30px;
   color: #e0e0e0;
 }
 
@@ -233,16 +231,14 @@ body::-webkit-scrollbar {
   text-decoration: underline;
 }
 
-
 /* ===== FOOTER SECTION ===== */
 .footer {
   background-color: #011f2a;
-  padding: 20px 0 10px; /* less top & bottom padding */
+  padding: 20px 0 10px;
   color: #aaa;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 0; /* avoid pushing it down unnecessarily */
+  margin-top: 0;
 }
-
 
 .footer-text {
   font-size: 0.95rem;
@@ -262,58 +258,84 @@ body::-webkit-scrollbar {
   text-decoration: none;
 }
 
+
+
 /* ===== RESPONSIVE DESIGN ===== */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 1101;
+}
+
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 15px;
-    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
 
-  .navbar-name {
-    font-size: 1.3rem;
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
-    gap: 15px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 32, 39, 0.98);
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    display: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .nav-link {
-    font-size: 1rem;
-    padding: 6px 0;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .contact-section {
-    padding: 50px 15px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact-section p {
-    font-size: 1rem;
-  }
-
-  .contact-icons {
-    gap: 25px;
+  .navbar-logo-link {
+    flex: 1;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
+  #home {
+    text-align: center;
   }
+  .home-subheading {
+  font-size: 1rem;
+  color: #ccc;
+}
+#resume-button {
+  margin-top: 20px;
+}
 
-  .navbar-logo-link {
-    margin-bottom: 10px;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
   }
-
-  .nav-links {
-    padding: 10px 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
